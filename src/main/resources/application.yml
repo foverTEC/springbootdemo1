@@ -1,0 +1,24 @@
+spring:
+  thymeleaf:
+    cache: false # 开发时关闭缓存,不然没法看到实时页面
+    mode: HTML # 用非严格的 HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+
+  #数据库连接配置
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/e3mall
+      username: root
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      # MySQL 8.x: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.springboot.demo1.mybatis.entity
+  mapper-locations: classpath:mapper/*.xml
